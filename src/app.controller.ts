@@ -14,7 +14,7 @@ export class AppController {
         storage : diskStorage({
             destination : './uploads',
             filename : (req, file, cb) => {
-              cb(null, file.originalname + '_' + Date.now() + '.pdf');
+              cb(null, file.originalname.split('.')[0] + '_' + Date.now() + '.pdf');
             }
         })
       }
